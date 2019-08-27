@@ -12,13 +12,13 @@
         binlog-ignore-db=不需要复制的数据库名，如果复制多个数据库，重复设置这个选项即可
         
 - 创建从库连接主库用户
-     
-  
-     mysql -u root -p
-      mysql> CREATE USER 'mysql221'@'192.168.252.221' IDENTIFIED BY 'mysql_221';
-      mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.221'; 
-      mysql> CREATE USER 'mysql222'@'192.168.252.222' IDENTIFIED BY 'mysql_222';
-      mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.222'; 
+      
+      
+          mysql -u root -p
+          mysql> CREATE USER 'mysql221'@'192.168.252.221' IDENTIFIED BY 'mysql_221';
+          mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.221'; 
+          mysql> CREATE USER 'mysql222'@'192.168.252.222' IDENTIFIED BY 'mysql_222';
+          mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.222'; 
       
 #从服务器
 
