@@ -14,27 +14,27 @@
 - 创建从库连接主库用户
       
       
-          mysql -u root -p
-          mysql> CREATE USER 'mysql221'@'192.168.252.221' IDENTIFIED BY 'mysql_221';
-          mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.221'; 
-          mysql> CREATE USER 'mysql222'@'192.168.252.222' IDENTIFIED BY 'mysql_222';
-          mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.222'; 
+         mysql -u root -p
+         mysql> CREATE USER 'mysql221'@'192.168.252.221' IDENTIFIED BY 'mysql_221';
+         mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.221'; 
+         mysql> CREATE USER 'mysql222'@'192.168.252.222' IDENTIFIED BY 'mysql_222';
+         mysql> GRANT REPLICATION SLAVE ON *.* TO 'mysql221'@'192.168.252.222'; 
       
 #从服务器
 
 - 修改my.conf
-
-    
-     vim /etc/my.cnf
-     [mysqld]
-     server-id=221(222的同样需要设置)
+        
+        
+         vim /etc/my.cnf
+         [mysqld]
+         server-id=221(222的同样需要设置)
      
 - 配置与主库通信（在从库中执行）
     
     
-    mysql> CHANGE MASTER TO MASTER_HOST='192.168.252.220', MASTER_USER='mysql221', MASTER_PASSWORD='mysql_221', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
+           mysql> CHANGE MASTER TO MASTER_HOST='192.168.252.220', MASTER_USER='mysql221', MASTER_PASSWORD='mysql_221', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
     
-    -PS: 其中：MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;可以在主库使用命令show master status;进行查看，可做调整。
+           PS: 其中：MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;可以在主库使用命令show master status;进行查看，可做调整。
     
 - 启动从库复制线程
 
@@ -45,21 +45,21 @@
 - 查看复制状态
     
     
-    mysql>  show slave status\G
-      *************************** 1. row ***************************
-             Slave_IO_State: Waiting for master to send event
-                Master_Host: 192.168.252.220
-                Master_User: replication
-                Master_Port: 3306
-              Connect_Retry: 60
-            Master_Log_File: mysql-bin.000001
-        Read_Master_Log_Pos: 629
-             Relay_Log_File: master2-relay-bin.000003
-              Relay_Log_Pos: 320
-      Relay_Master_Log_File: mysql-bin.000001
-           Slave_IO_Running: Yes
-          Slave_SQL_Running: Yes
-      ...............
+          mysql>  show slave status\G
+          *************************** 1. row ***************************
+                 Slave_IO_State: Waiting for master to send event
+                    Master_Host: 192.168.252.220
+                    Master_User: replication
+                    Master_Port: 3306
+                  Connect_Retry: 60
+                Master_Log_File: mysql-bin.000001
+            Read_Master_Log_Pos: 629
+                 Relay_Log_File: master2-relay-bin.000003
+                  Relay_Log_Pos: 320
+          Relay_Master_Log_File: mysql-bin.000001
+               Slave_IO_Running: Yes
+              Slave_SQL_Running: Yes
+          ...............
       
 - 检查主从复制通信状态
     - Slave_IO_State #从站的当前状态
