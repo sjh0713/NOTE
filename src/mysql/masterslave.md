@@ -2,8 +2,8 @@
 #主服务器
 - **修改my.conf**
 
-    
-    vim /etc/my.conf
+           
+        vim /etc/my.conf
         [mysqld]
         server-id=220
         log-bin=mysql-bin
