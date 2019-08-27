@@ -9,3 +9,5 @@
      - [SncRedisBundle](src/Cache/RedisCache.md)
 - **git**
   - [Basic](src/git/basic.md)基础常用命令
+- **Mysql**
+  - [master slave](src/mysql/masterslave.md)主从配置
