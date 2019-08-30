@@ -1,4 +1,4 @@
-# :cow:tiger:rabbit:dragon:snake:horse:sheep:monkey:chook:dog:pig:lion:rat:elephant: 归来仍是少女
+# :lion: 归来仍是少女
 
 1.  [symfony](src/symfony/README.md "symfony") 
 	- [Symfony Guide 入门指南](src/symfony/Guide/README.md)
