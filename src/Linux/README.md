@@ -1,0 +1,33 @@
+## Linux
+- [basic](basic.md)
+- [network configure](network_configure.md)
+- [nohup](nohup.md)
+- [sudo](sudo.md)
+- [crontab](crontab.md)
+- [package management](package_management.md)
+- [rsync](rsync.md)
+- [CentOS Local yum repo](CentOSLocalYumRepo.md)
+- [log view 日志查看](log_view.md)
+- [netstat](netstat.md)
+- [telenet](telenet.md)
+- [iptables](iptables.md)
+- [tar](tar.md)
+- [df & du](df_du.md)
+- [scp](scp.md)
+- [history](history.md)
+- [sed](sed.md)
+- [rz & sz](rzsz.md)
+- [iconv](iconv.md)
+- [Aliyun服务器配置IPV6](ipv6_aliyun.md)
+- [chinese support](chinese_support.md) 中文支持
+- [fdisk](fdisk.md) Linux下磁盘挂载
+- [date](date.md) 修改服务器时间
+- [lsof](lsof.md) mac下查看端口。lsof（list open files）是一个查看当前系统文件的工具。
+- [SELinux](SELinux.md) SELinux状态与关闭
+- [glibc 简介与升级](glibc.md)
+- [init 6 VS reboot](init6_reboot.md)
+- [rpm包使用命令](rpm.md)
+- [logrotate 日志分割](logrotate.md)
+- [find 文件查找](find.md)
+- [升级gcc 4.8.5](gcc.md)
+- [kill 批量杀掉筛选的进程](kill.md)
